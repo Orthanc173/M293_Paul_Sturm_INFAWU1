@@ -19,6 +19,7 @@ header {
   text-decoration: none;
   font-size: 22px;
   font-weight: bold;
+  color: white;
 
   ul {
     display: flex;
