@@ -1,3 +1,7 @@
+/*--------------
+      GLOBAL
+--------------*/
+
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
 
 * {
@@ -7,9 +11,29 @@
   max-width: 100%;
 }
 
+.container {
+  max-width: 1500px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 60px;
+  padding-right: 60px;
+}
+
+h2 {
+  font-size: 20px;
+}
+
+/*--------------
+      BODY
+--------------*/
+
 body {
   font-family: "Roboto", sans-serif;
 }
+
+/*--------------
+      HEADER
+--------------*/
 
 header {
   padding-bottom: 40px;
@@ -37,37 +61,19 @@ header {
   }
 }
 
-#home {
-  margin-right: auto;
-  font-size: 24px;
-}
-
-#homeimg {
-  width: 650px;
-  padding-top: 20px;
-}
-
 .selectedPage {
   text-decoration: underline;
   text-decoration-color: white;
 }
 
-.container {
-  max-width: 1500px;
-  margin-left: auto;
+#home {
   margin-right: auto;
-  padding-left: 60px;
-  padding-right: 60px;
+  font-size: 24px;
 }
 
-section {
-  text-align: center;
-}
-
-h1 {
-  padding: 60px 0;
-  font-size: 40px;
-}
+/*--------------
+      FOOTER
+--------------*/
 
 footer {
   padding-bottom: 40px;
@@ -75,13 +81,14 @@ footer {
   font-family: "Roboto", sans-serif;
   background-color: #24198d;
   text-decoration: none;
-  font-size: 22px;
+  font-size: 16px;
   color: white;
+  font-weight: 200;
 
   section {
     display: flex;
     justify-content: space-between;
-    gap: 20px;
+    gap: 10%;
   }
 }
 
@@ -100,8 +107,127 @@ footer {
   min-width: 20%;
 }
 
-/* 
+/*--------------
+      HOMEPAGE
+--------------*/
 
-HEADER
+#homeimg {
+  width: 650px;
+  padding-top: 20px;
+}
 
-*/
+section {
+  text-align: center;
+}
+
+h1 {
+  padding: 60px 0;
+  font-size: 40px;
+}
+
+#homeList {
+  display: flex;
+  align-content: center;
+  gap: 5%;
+  justify-content: space-between;
+  list-style-type: none;
+  padding: 60px;
+}
+
+#homeList img {
+  border: 2px solid black;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+}
+
+#smartphones {
+  object-position: top;
+}
+
+#homeList p {
+  text-align: center;
+  padding-top: 15px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+#homeList {
+  a:link {
+    text-decoration: none;
+  }
+  a:visited {
+    color: black;
+  }
+}
+
+/*--------------
+      SMARTPHONES, TABLETS, LAPTOPS
+--------------*/
+
+.contentList {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: space-between;
+  justify-content: space-between;
+  list-style-type: none;
+  gap: 7%;
+}
+
+.contentItem {
+  flex: 1 1 21%;
+  max-width: 400px;
+  margin-bottom: 40px;
+
+  img {
+    border: 1.5px solid black;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+  }
+}
+
+.itemInfo {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 20px;
+  align-items: center;
+}
+
+.purchaseInfo {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  flex-shrink: 0;
+  padding-left: 15%;
+}
+
+.itemInfo .warenkorb {
+  width: 32px;
+  height: 32px;
+  border: 0px;
+  object-fit: contain;
+}
+
+.price {
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.contentItem select {
+  width: 100%;
+  height: 36px;
+  padding: 0 12px;
+  margin-top: 20px;
+  border: 1.5px solid #222;
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 0;
+}
+
+.contentItem p {
+  font-family: "Roboto", sans-serif;
+  font-size: 13px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
