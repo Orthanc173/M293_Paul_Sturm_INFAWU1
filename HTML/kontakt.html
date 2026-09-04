@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Kontakt</title>
     <link rel="stylesheet" href="../CSS/stylesheet.css" />
+    <script src="../JavaScript/script.js" defer></script>
   </head>
 
   <body>
@@ -49,12 +50,15 @@
         <p>Was denkst du über unsere Preise?</p>
 
         <div class="ratings">
-          <label><input type="radio" name="preise" checked /> super fair</label>
-          <label><input type="radio" name="preise" /> okay</label>
-          <label><input type="radio" name="preise" /> teuer</label>
+          <label
+            ><input id="super-fair" type="radio" name="preise" checked /> super
+            fair</label
+          >
+          <label><input id="okay" type="radio" name="preise" /> okay</label>
+          <label><input id="teuer" type="radio" name="preise" /> teuer</label>
         </div>
 
-        <button type="submit">Absenden</button>
+        <button id="button" type="submit">Absenden</button>
       </form>
     </section>
 
