@@ -304,6 +304,10 @@ h1 {
   cursor: pointer;
 }
 
+/*--------------
+      Mobile
+--------------*/
+
 @media screen and (max-width: 1024px) {
   footer section {
     display: block;

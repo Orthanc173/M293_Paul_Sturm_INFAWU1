@@ -19,10 +19,12 @@ form.addEventListener("submit", (event) => {
   const nameContent = name.value;
   const emailContent = email.value;
   const messageContent = message.value;
+  const priceRating = document.querySelector('input[name="preise"]:checked');
 
   console.log("Name: ", nameContent);
   console.log("E-Mail: ", emailContent);
   console.log("Nachricht: ", messageContent);
+  console.log("Preisbewertung: ", priceRating.value);
 
   alert(`Danke für's Einsenden deiner Nachricht, ${nameContent}! 😘👌`);
 });
