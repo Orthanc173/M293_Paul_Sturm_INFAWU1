@@ -14,7 +14,6 @@ const form = document.querySelector("form");
 
 form?.addEventListener("submit", (event) => {
   event.preventDefault();
-  console.log(event);
 
   const nameContent = name.value;
   const emailContent = email.value;
@@ -41,7 +40,6 @@ const getData = async () => {
   );
   const data = await result.json();
   const smartphones = data["products"];
-  console.log(smartphones);
 
   for (let i = 0; i <= smartphones.length; i++) {
     ulProducts.innerHTML += `
