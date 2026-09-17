@@ -34,21 +34,30 @@ API: dynamische Produkte
 
 const ulProducts = document.querySelector("ul.contentList");
 
-const getData = async () => {
-  const result = await fetch(
-    "https://dummyjson.com/products/category/smartphones",
-  );
-  const data = await result.json();
-  const smartphones = data["products"];
+const getProducts = async (source, showStorageSelect = false) => {
+  if (!ulProducts) return;
 
-  for (let i = 0; i <= smartphones.length; i++) {
+  const result = await fetch(source);
+  const data = await result.json();
+  const products = data.products;
+  const storageSelect = showStorageSelect
+    ? `
+        <select>
+          <option value="">Speicherplatz auswählen</option>
+          <option value="16">16GB</option>
+          <option value="32">32GB</option>
+          <option value="64">64GB</option>
+        </select>`
+    : "";
+
+  for (let i = 0; i < products.length; i++) {
     ulProducts.innerHTML += `
     <li class="contentItem">
-        <img src="${smartphones[i].thumbnail}" alt="Produktbild von ${smartphones[i].title}" /><br />
+        <img src="${products[i].thumbnail}" alt="Produktbild von ${products[i].title}" /><br />
         <div class="itemInfo">
-          <h2>${smartphones[i].title}</h2>
+          <h2>${products[i].title}</h2>
           <div class="purchaseInfo">
-            <h2 class="price">${smartphones[i].price} CHF</h2>
+            <h2 class="price">${products[i].price} CHF</h2>
             <img
               class="warenkorb"
               src="../assets/cart.png"
@@ -56,17 +65,32 @@ const getData = async () => {
             />
           </div>
         </div>
-        <select>
-          <option value="">Speicherplatz auswählen</option>
-          <option value="16">16GB</option>
-          <option value="32">32GB</option>
-          <option value="64">64GB</option>
-        </select>
+        ${storageSelect}
         <p>
-          ${smartphones[i].description}
+          ${products[i].description}
         </p>
       </li>`;
   }
 };
 
-getData();
+const getSmartphones = () => {
+  getProducts("https://dummyjson.com/products/category/smartphones", true);
+};
+
+const getTablets = () => {
+  getProducts("https://dummyjson.com/products/category/tablets");
+};
+
+const getLaptops = () => {
+  getProducts("https://dummyjson.com/products/category/laptops");
+};
+
+const currentPage = document.title.toLowerCase();
+
+if (currentPage.includes("smartphones")) {
+  getSmartphones();
+} else if (currentPage.includes("tablets")) {
+  getTablets();
+} else if (currentPage.includes("laptops")) {
+  getLaptops();
+}

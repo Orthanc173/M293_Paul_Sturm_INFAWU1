@@ -69,6 +69,7 @@ header {
 #home {
   margin-right: auto;
   font-size: 24px;
+  padding-right: 20px;
 }
 
 /*--------------
@@ -174,11 +175,14 @@ h1 {
 }
 
 .contentItem {
-  flex: 1 1 21%;
+  flex: 1 1 calc((100% - 14%) / 3);
+  min-width: min(250px, 100%);
   max-width: 400px;
   margin-bottom: 40px;
 
   img {
+    display: block;
+    width: 100%;
     border: 1.5px solid black;
     aspect-ratio: 1/1;
     object-fit: cover;
@@ -191,17 +195,19 @@ h1 {
   gap: 12px;
   margin-top: 20px;
   align-items: center;
+  min-width: 0;
 }
 
 .purchaseInfo {
   display: flex;
   align-items: center;
-  gap: 40px;
+  gap: 12px;
   flex-shrink: 0;
-  padding-left: 15%;
+  min-width: 0;
 }
 
 .itemInfo .warenkorb {
+  flex: 0 0 32px;
   width: 32px;
   height: 32px;
   border: 0px;
@@ -211,6 +217,10 @@ h1 {
 .price {
   white-space: nowrap;
   flex-shrink: 0;
+}
+
+.itemInfo > h2 {
+  min-width: 0;
 }
 
 .contentItem select {
@@ -310,6 +320,81 @@ h1 {
 
 @media screen and (max-width: 1024px) {
   footer section {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .footerleft,
+  .footercenter,
+  .footerright {
+    width: 100%;
+    max-width: 500px;
+    min-width: 0;
+    text-align: center;
+  }
+  header ul {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+  #home {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    padding-right: 0;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 520px) {
+  #homeList {
+    flex-direction: column;
+    align-items: center;
+    gap: 35px;
+    padding: 30px 20px;
+  }
+
+  #homeList li {
+    width: 100%;
+    max-width: 350px;
+  }
+
+  #homeList img {
+    width: 100%;
+  }
+
+  .container {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .contactForm {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    margin-bottom: 40px;
+  }
+
+  .contactForm label,
+  .contactForm input,
+  .contactForm textarea,
+  .contactForm p,
+  .ratings,
+  .contactForm button {
+    grid-column: 1;
+  }
+
+  .ratings {
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 0;
+  }
+
+  .contactForm button {
+    margin-top: 15px;
+    justify-self: center;
   }
 }
