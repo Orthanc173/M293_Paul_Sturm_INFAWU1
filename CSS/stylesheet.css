@@ -11,6 +11,22 @@
   max-width: 100%;
 }
 
+:root {
+  --base-color: white;
+  --text-color: black;
+  --headfoot-base-color: #24198d;
+  --headfoot-text-color: white;
+  --border-color: black;
+}
+
+.darkmode {
+  --base-color: #060036;
+  --text-color: rgb(235, 231, 231);
+  --headfoot-base-color: #24198d;
+  --headfoot-text-color: white;
+  --border-color: rgb(210, 207, 207);
+}
+
 .container {
   max-width: 1500px;
   margin-left: auto;
@@ -29,8 +45,38 @@ h2 {
 
 body {
   font-family: "Roboto", sans-serif;
+  background-color: var(--base-color);
+  color: var(--text-color);
 }
 
+#themeSwitch {
+  height: 40px;
+  width: 40px;
+  padding: 0;
+  border-radius: 50%;
+  background-color: aliceblue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 50px;
+  left: 10px;
+}
+#themeSwitch svg {
+  fill: black;
+}
+
+#themeSwitch svg:first-child {
+  display: none;
+}
+
+.darkmode #themeSwitch svg:last-child {
+  display: none;
+}
+
+.darkmode #themeSwitch svg:first-child {
+  display: block;
+}
 /*--------------
       HEADER
 --------------*/
@@ -39,11 +85,11 @@ header {
   padding-bottom: 40px;
   padding-top: 40px;
   font-family: "Roboto", sans-serif;
-  background-color: #24198d;
+  background-color: var(--headfoot-base-color);
   text-decoration: none;
   font-size: 22px;
   font-weight: bold;
-  color: white;
+  color: var(--headfoot-text-color);
 
   ul {
     display: flex;
@@ -57,13 +103,13 @@ header {
     text-decoration: none;
   }
   a:visited {
-    color: white;
+    color: var(--headfoot-text-color);
   }
 }
 
 .selectedPage {
   text-decoration: underline;
-  text-decoration-color: white;
+  text-decoration-color: var(--headfoot-text-color);
 }
 
 #home {
@@ -80,10 +126,10 @@ footer {
   padding-bottom: 40px;
   padding-top: 40px;
   font-family: "Roboto", sans-serif;
-  background-color: #24198d;
+  background-color: var(--headfoot-base-color);
   text-decoration: none;
   font-size: 16px;
-  color: white;
+  color: var(--headfoot-text-color);
   font-weight: 200;
 
   section {
@@ -136,7 +182,7 @@ h1 {
 }
 
 #homeList img {
-  border: 2px solid black;
+  border: 2px solid var(--border-color);
   aspect-ratio: 16/9;
   object-fit: cover;
 }
@@ -157,7 +203,7 @@ h1 {
     text-decoration: none;
   }
   a:visited {
-    color: black;
+    color: var(--text-color);
   }
 }
 
@@ -183,7 +229,7 @@ h1 {
   img {
     display: block;
     width: 100%;
-    border: 1.5px solid black;
+    border: 1.5px solid var(--border-color);
     aspect-ratio: 1/1;
     object-fit: cover;
   }
@@ -228,7 +274,7 @@ h1 {
   height: 36px;
   padding: 0 12px;
   margin-top: 20px;
-  border: 1.5px solid #222;
+  border: 1.5px solid var(--border-color);
   font-family: "Roboto", sans-serif;
   font-size: 14px;
   cursor: pointer;
@@ -259,11 +305,13 @@ h1 {
 .contactForm input:not([type="radio"]),
 .contactForm textarea {
   width: 100%;
-  border: 2px solid #222;
+  border: 2px solid var(--border-color);
   border-radius: 0;
   padding: 10px;
   font-family: "Roboto", sans-serif;
   font-size: 14px;
+  background-color: var(--base-color);
+  color: var(--text-color);
 }
 
 .contactForm input:not([type="radio"]) {
@@ -298,7 +346,7 @@ h1 {
 .ratings input[type="radio"] {
   width: 25px;
   height: 25px;
-  accent-color: #2d1d9b;
+  accent-color: var(--headfoot-base-color);
 }
 
 .contactForm button {
@@ -308,8 +356,8 @@ h1 {
   margin-top: 32px;
   border: 0;
   border-radius: 0;
-  background-color: #2d1d9b;
-  color: white;
+  background-color: var(--headfoot-base-color);
+  color: var(--headfoot-text-color);
   font-weight: bold;
   cursor: pointer;
 }

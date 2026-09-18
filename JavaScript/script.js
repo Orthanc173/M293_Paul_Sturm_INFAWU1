@@ -1,10 +1,32 @@
-//  DANKESNACHRICHT UND CONSOLE LOG
+// DARK MODE
+let darkmode = localStorage.getItem("darkmode");
+const themeSwitch = document.querySelector("#themeSwitch");
 
-/* 
-Beim Absenden des Kontaktformulars wird dem Nutzer eine
-Dankes-Nachricht angezeigt. Alle eingegebenen Angaben werden in der
-Konsole geloggt.
-*/
+const enableDarkmode = () => {
+  document.body.classList.add("darkmode");
+  localStorage.setItem("darkmode", "active");
+};
+
+const disableDarkmode = () => {
+  document.body.classList.remove("darkmode");
+  localStorage.setItem("darkmode", null);
+};
+
+if (darkmode === "active") {
+  enableDarkmode();
+}
+
+themeSwitch.addEventListener("click", () => {
+  darkmode = localStorage.getItem("darkmode");
+  if (darkmode !== "active") {
+    enableDarkmode();
+  } else {
+    disableDarkmode();
+  }
+});
+
+//  DANKESNACHRICHT UND CONSOLE LOG FÜR KONTAKTFORMULAR
+
 const button = document.querySelector("#button");
 const name = document.querySelector("#name");
 const email = document.querySelector("#email");
@@ -28,9 +50,7 @@ form?.addEventListener("submit", (event) => {
   alert(`Danke für's Einsenden deiner Nachricht, ${nameContent}! 😘👌`);
 });
 
-/*
-API: dynamische Produkte
-*/
+// DYNAMISCHE PRODUKTE / LISTENELEMENTE
 
 const ulProducts = document.querySelector("ul.contentList");
 
