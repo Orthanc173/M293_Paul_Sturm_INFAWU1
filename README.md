@@ -8,4 +8,4 @@ https://youtu.be/JDa5n2FtNnU?si=7L1d1mmetaoF3f5b
 
 AI Disclosure:
 
-Ich habe die intergrierte VSCode Ki benutzt, um bei Bugfixes und SyntaxErrors auszuhelfen. Ausserdem habe ich die KI benutzt, um addierte Funktionatlitäten, die auf vielen Elementen hinzugefügt werden (z.B. Classes adden bei HTML), einfach einzufügen.
+Ich habe die intergrierte VSCode Ki benutzt, um bei Bugfixes, SyntaxErrors und Features, die nicht Teil des Unterrichts waren, auszuhelfen. Ausserdem habe ich die KI benutzt, um addierte Funktionatlitäten, die auf vielen Elementen hinzugefügt werden (z.B. Classes adden bei HTML), einfach einzufügen.

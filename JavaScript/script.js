@@ -60,6 +60,7 @@ const getProducts = async (source, showStorageSelect = false) => {
   const result = await fetch(source);
   const data = await result.json();
   const products = data.products;
+  //AI generierte Variable:
   const storageSelect = showStorageSelect
     ? `
         <select>
